@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= esc($title) ?> | Vạn Thiên Hoàng</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <!-- Logo bên trái -->
-            <a class="navbar-brand d-flex align-items-center" href="<?= base_url('/news') ?>">
+            <a class="navbar-brand d-flex align-items-center" style="font-family: 'Nunito', sans-serif; font-optical-sizing: auto; font-weight: 800; font-style: normal;" href="<?= base_url('/test') ?>">
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="50" height="50" viewBox="0 0 1061 1061" class="me-2">
 
                     <g transform="translate(0.000000,1061.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
@@ -20,7 +23,7 @@
                     </g>
 
                 </svg>
-                    CodeIgniter News
+                    TICTEXTILE
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

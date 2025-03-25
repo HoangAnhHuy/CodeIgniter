@@ -3,12 +3,14 @@
 use CodeIgniter\Router\RouteCollection;
 use App\Controllers\Pages;
 use App\Controllers\News;
-
+use App\Controllers\test;
 
 /**
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+
+$routes->get('test', [test::class, 'index']); # tiền đề của login view sau này
 
 $routes->get('news', [News::class, 'index']);
 $routes->get('news/new', [News::class, 'new']);

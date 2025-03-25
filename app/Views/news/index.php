@@ -26,9 +26,9 @@
     </div>
 <?php else: ?>
 
-    <h3>No News</h3>
+    <h3>Không có sản phẩm</h3>
 
-    <p>Unable to find any news for you.</p>
+    <p>Không tìm thấy sản phẩm nào mà bạn cần tìm</p>
 
 <?php endif ?>
 
