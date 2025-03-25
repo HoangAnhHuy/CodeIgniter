@@ -1,18 +1,35 @@
-<h2><?= esc($title) ?></h2>
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title">➕ Tạo bài viết mới</h2>
 
-<?= session()->getFlashdata('error') ?>
-<?= validation_list_errors() ?>
+            <?php if (session()->getFlashdata('error')): ?>
+                <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+            <?php endif; ?>
 
-<form action="/news" method="post">
-    <?= csrf_field() ?>
+            <?= validation_list_errors() ?>
 
-    <label for="title">Title</label>
-    <input type="input" name="title" value="<?= set_value('title') ?>">
-    <br>
+            <form action="/news" method="post">
+                <?= csrf_field() ?>
 
-    <label for="body">Text</label>
-    <textarea name="body" cols="45" rows="4"><?= set_value('body') ?></textarea>
-    <br>
+                <div class="mb-3">
+                    <label for="title" class="form-label">📝 Tiêu đề</label>
+                    <input type="text" class="form-control" name="title" id="title" value="<?= set_value('title') ?>" required placeholder="Nhập tiêu đề">
+                </div>
 
-    <input type="submit" name="submit" value="Create news item">
-</form>
+                <div class="mb-3">
+                    <label for="slug" class="form-label">🔗 Slug</label>
+                    <input type="text" class="form-control" name="slug" id="slug" value="<?= set_value('slug') ?>" placeholder="Tự động tạo nếu để trống">
+                </div>
+
+                <div class="mb-3">
+                    <label for="body" class="form-label">📜 Nội dung</label>
+                    <textarea class="form-control" name="body" id="body" rows="5" required style="resize: none;"><?= set_value('body') ?></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">✅ Đăng bài</button>
+                <a href="/news" class="btn btn-secondary">❌ Hủy</a>
+            </form>
+        </div>
+    </div>
+</div>
