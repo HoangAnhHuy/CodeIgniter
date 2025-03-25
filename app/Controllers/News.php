@@ -13,7 +13,7 @@ class News extends BaseController
 
         $data = [
             'news_list' => $model->getNews(),
-            'title'     => 'News archive',
+            'title'     => 'Lưu trữ sản phẩm',
         ];
 
         return view('templates/header', $data)
@@ -43,7 +43,7 @@ class News extends BaseController
     {
         helper('form');
 
-        return view('templates/header', ['title' => 'Create a news item'])
+        return view('templates/header', ['title' => 'Tạo một sản phẩm mới'])
             . view('news/create')
             . view('templates/footer');
     }
@@ -75,7 +75,7 @@ class News extends BaseController
             'body'  => $post['body'],
         ]);
 
-        return view('templates/header', ['title' => 'Create a news item'])
+        return view('templates/header', ['title' => 'Tạo một sản phẩm mới'])
             . view('news/success')
             . view('templates/footer');
     }

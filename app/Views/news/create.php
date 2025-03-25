@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <div class="card shadow-sm">
         <div class="card-body">
-            <h2 class="card-title">➕ Tạo bài viết mới</h2>
+            <h2 class="card-title">➕ Tạo sản phẩm mới</h2>
 
             <?php if (session()->getFlashdata('error')): ?>
                 <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
