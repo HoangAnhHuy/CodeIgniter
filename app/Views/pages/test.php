@@ -29,7 +29,7 @@
 
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <img src="<?= base_url('/assets/images/logo.svg') ?>" width="50" height="50" class="me-2">
-                                            <span class="h1 mb-0" style="font-family: 'Nunito', sans-serif; font-optical-sizing: auto; font-weight: 800; font-style: normal;">TICTEXTILE</span>
+                                            <span class="h1 mb-0 fw-800" style="font-family: 'Nunito', sans-serif; font-weight: 800;">TICTEXTILE</span>
                                         </div>
 
                                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Đăng nhập vào tài khoản của bạn</h5>

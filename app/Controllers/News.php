@@ -11,11 +11,27 @@ class News extends BaseController
     {
         $model = model(NewsModel::class);
 
+        $news_list = $model->getNews();
+    
+        foreach ($news_list as &$news_item) {
+            $slug = $news_item['slug'];
+            $image_folder = FCPATH . 'assets/images/fabric_images/' . $slug; // Đúng đường dẫn tới thư mục ảnh
+    
+            if (is_dir($image_folder)) {
+                $files = array_diff(scandir($image_folder), ['.', '..']); // Lấy danh sách file ảnh
+                $news_item['images'] = array_values(array_filter($files, function ($file) use ($image_folder) {
+                    return is_file($image_folder . '/' . $file); // Chỉ lấy file, không lấy thư mục con
+                }));
+            } else {
+                $news_item['images'] = []; // Không có ảnh
+            }
+        }
+    
         $data = [
-            'news_list' => $model->getNews(),
+            'news_list' => $news_list,
             'title'     => 'Lưu trữ sản phẩm',
         ];
-
+    
         return view('templates/header', $data)
             . view('news/index')
             . view('templates/footer');
@@ -23,7 +39,7 @@ class News extends BaseController
 
     public function show(?string $slug = null)
     {
-        
+
         $model = model(NewsModel::class);
 
         $data['news'] = $model->getNews($slug);
